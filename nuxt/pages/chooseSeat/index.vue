@@ -1,47 +1,29 @@
 <template>
   <div class="container">
     <div>
-      <Logo />
       <h1 class="title">
-        seeページです
+        席を選択ページ
       </h1>
-      <c-button :href="homeLink"></c-button>
-      <c-header-style-one :title="title"></c-header-style-one>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+      <c-button href="/" color_blue> トップへ </c-button>
+      <c-button :href="waitingLink"> 待機ページへ </c-button>
+      <c-button :href="chooseLink" color_blue> 席を選択ページへ </c-button>
+      <c-button :href="watchLink"> 視聴用ページへ </c-button>
     </div>
   </div>
 </template>
 
 <script>
-import CButton from '~/components/CButton'
-import CHeaderStyleOne from '~/components/CHeaderStyleOne'
+import CButton from '~/components/modules/CButton'
 export default {
+  components: {
+    CButton
+  },
   data () {
     return {
-      homeLink: '/',
-      title: 'connect'
+      waitingLink: '/waiting/',
+      chooseLink: '/chooseSeat/',
+      watchLink: '/watch/'
     }
-  },
-  components: {
-    CButton,
-    CHeaderStyleOne
   }
 }
 </script>

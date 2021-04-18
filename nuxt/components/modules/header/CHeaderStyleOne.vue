@@ -1,12 +1,11 @@
 <template>
     <div>
-        <p>{{ title }}</p>
+        <p><slot>テキスト</slot></p>
     </div>
 </template>
 
 <script>
 export default {
-  props: ['title']
 }
 </script>
 
