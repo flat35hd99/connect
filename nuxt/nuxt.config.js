@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'nuxt',
+    title: 'connect',
     htmlAttrs: {
       lang: 'en'
     },
@@ -44,6 +44,7 @@ export default {
   styleResources: {
     scss: [
         './assets/style/*.scss',
+        './assets/style/_mixins.scss',
       ],
    },
 

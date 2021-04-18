@@ -1,34 +1,36 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        nuxt
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+  <div>
+    <div class="container">
+      <div>
+        <h1 class="title">トップページ</h1>
+        <c-button href="/" color_blue> トップへ </c-button>
+        <c-button :href="waitingLink"> 待機ページへ </c-button>
+        <c-button :href="chooseLink" color_blue> 席を選択ページへ </c-button>
+        <c-button :href="watchLink"> 視聴用ページへ </c-button>
       </div>
+    </div>
+    <div class="container">
+      <c-header-style-one></c-header-style-one>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import CButton from '~/components/modules/CButton'
+import CHeaderStyleOne from '~/components/modules/header/CHeaderStyleOne'
+export default {
+  components: {
+    CButton,
+    CHeaderStyleOne
+  },
+  data () {
+    return {
+      waitingLink: '/waiting/',
+      chooseLink: '/chooseSeat/',
+      watchLink: '/watch/'
+    }
+  }
+}
 </script>
 
 <style>
@@ -42,16 +44,8 @@ export default {}
 }
 
 .title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;

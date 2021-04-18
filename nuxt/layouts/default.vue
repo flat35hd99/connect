@@ -1,8 +1,18 @@
 <template>
   <div>
+    <c-global-header></c-global-header>
     <Nuxt />
   </div>
 </template>
+
+<script>
+import CGlobalHeader from '~/components/global/CGlobalHeader'
+export default {
+  components: {
+    CGlobalHeader
+  }
+}
+</script>
 
 <style>
 html {
