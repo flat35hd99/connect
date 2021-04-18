@@ -1,8 +1,8 @@
 <template>
      <component
-        :is="isInternalLink(link) ? 'nuxt-link' : 'a'"
-        :to="isInternalLink(link) ? link : ''"
-        :href="isInternalLink(link) ? '' : link"
+        :is="isInternalLink() ? 'nuxt-link' : 'a'"
+        :to="isInternalLink() ? href : ''"
+        :href="isInternalLink() ? '' : href"
         class="button"
         :class="{color_red, color_blue}"
       >
@@ -14,7 +14,7 @@
 export default {
   props: {
     // link
-    link: {
+    href: {
       type: String,
       default: '/'
     },
@@ -29,8 +29,8 @@ export default {
     }
   },
   methods: {
-    isInternalLink (path) {
-      return !/^https?:\/\//.test(path)
+    isInternalLink () {
+      return !/^https?:\/\//.test(this.href)
     }
   }
 }

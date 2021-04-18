@@ -4,10 +4,11 @@
       <h1 class="title">
         待機ページ
       </h1>
-      <c-button href="/connect" color_blue> トップへ </c-button>
+      <c-button href="/" color_blue> トップへ </c-button>
       <c-button :href="waitingLink"> 待機ページへ </c-button>
       <c-button :href="chooseLink" color_blue> 席を選択ページへ </c-button>
       <c-button :href="watchLink"> 視聴用ページへ </c-button>
+      <nuxt-link to="/watch">wating</nuxt-link>
     </div>
   </div>
 </template>
