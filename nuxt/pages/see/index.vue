@@ -3,9 +3,10 @@
     <div>
       <Logo />
       <h1 class="title">
-        nuxtまなほ
+        seeページです
       </h1>
-      <c-button :href="seeLink"></c-button>
+      <c-button :href="homeLink"></c-button>
+      <c-header-style-one :title="title"></c-header-style-one>
       <div class="links">
         <a
           href="https://nuxtjs.org/"
@@ -30,14 +31,17 @@
 
 <script>
 import CButton from '~/components/CButton'
+import CHeaderStyleOne from '~/components/CHeaderStyleOne'
 export default {
   data () {
     return {
-      seeLink: '/see'
+      homeLink: '/',
+      title: 'connect'
     }
   },
   components: {
-    CButton
+    CButton,
+    CHeaderStyleOne
   }
 }
 </script>
