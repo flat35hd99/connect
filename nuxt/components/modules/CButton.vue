@@ -1,10 +1,13 @@
 <template>
-    <a
-      class="button"
-      :class="{color_red, color_blue}"
-      :href="link">
-      <slot>ボタン</slot>
-    </a>
+     <component
+        :is="isInternalLink(link) ? 'nuxt-link' : 'a'"
+        :to="isInternalLink(link) ? link : ''"
+        :href="isInternalLink(link) ? '' : link"
+        class="button"
+        :class="{color_red, color_blue}"
+      >
+        <slot>ボタン</slot>
+      </component>
 </template>
 
 <script>
@@ -23,6 +26,11 @@ export default {
     color_blue: {
       type: Boolean,
       default: false
+    }
+  },
+  methods: {
+    isInternalLink (path) {
+      return !/^https?:\/\//.test(path)
     }
   }
 }
