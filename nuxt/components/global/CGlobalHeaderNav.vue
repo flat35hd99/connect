@@ -23,9 +23,9 @@
 export default {
   data () {
     return {
-      waitingLink: '/waiting/',
-      chooseLink: '/chooseSeat/',
-      watchLink: '/watch/'
+      waitingLink: 'waiting/',
+      chooseLink: 'chooseSeat/',
+      watchLink: 'watch/'
     }
   }
 }
