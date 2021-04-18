@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/waiting", {data:[{}],fetch:{},mutations:void 0});
