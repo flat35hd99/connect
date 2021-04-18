@@ -42,4 +42,4 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         personal_token: ${{ secrets.WORKFLOW_TOKEN }}
-        publish_dir: ./nuxt/dist
+        publish_dir: ./dist
