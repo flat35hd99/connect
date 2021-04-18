@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="header__logoarea">
-      <img class="header__logo" src="/logo/TEDxNagoyaU_1line_noback_blacktext.png" alt="">
+      <img class="header__logo" src="logo/TEDxNagoyaU_1line_noback_blacktext.png" alt="">
     </div>
     <!--開発時に入れるメニュー-->
     <c-global-header-nav></c-global-header-nav>

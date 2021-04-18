@@ -1,6 +1,6 @@
 name: github pages
 env:
-  DEPLOY_ENV: DEVELOP 
+  DEPLOY_ENV: DEVELOP
 
 on:
   push:
@@ -33,7 +33,7 @@ jobs:
     - name: build nuxt project
       run: npm run build
       working-directory: ./nuxt
-    
+
     - name: export nuxt project
       run: npm run export
       working-directory: ./nuxt
@@ -41,5 +41,5 @@ jobs:
     - name: deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
-        personal_token: ${{ secrets.GITHUB_TOKEN }}
+        personal_token: ${{ secrets.WORKFLOW_TOKEN }}
         publish_dir: ./dist
