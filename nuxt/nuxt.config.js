@@ -1,7 +1,14 @@
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-
+  /**
+   * github-pagesにデプロイするときはtrueになる
+   * 詳しくは.github/workflows/gh-pages.ymlを参照
+   */
+  router: {
+    base: process.env.DEPLOY_ENV === 'DEVELOP' ? '/website/'
+        : '/'
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'connect',
