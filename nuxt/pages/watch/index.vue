@@ -1,22 +1,39 @@
 <template>
-  <div class="container">
-    <div>
-      <h1 class="title">
-        視聴用ページ
-      </h1>
-      <c-button href="/" color_blue> トップへ </c-button>
-      <c-button :href="waitingLink"> 待機ページへ </c-button>
-      <c-button :href="chooseLink" color_blue> 席を選択ページへ </c-button>
-      <c-button :href="watchLink"> 視聴用ページへ </c-button>
+  <div class="container-fluid">
+    <div class="row mb-5">
+      <div class="col-12 fluid_fullwidth">
+        <div class="img__wrapper">
+          <img src="watch/youtube_dummy.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <c-header-style-one>トークでの気づきを発信しましょう！</c-header-style-one>
+        <p>トーク視聴中の気づきを下のボタンから発信しましょう！</p>
+        <div class="text-center">
+          <form action="" method="post">
+            <input type="text" name="yes" placeholder="その考えおもろ">
+            <input type="submit" value="あっ！！">
+          </form>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="text-center">
+          <c-button :href="watchLink">拍手ボタン</c-button>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import CButton from '~/components/modules/CButton'
+import CHeaderStyleOne from '~/components/modules/header/CHeaderStyleOne'
 export default {
   components: {
-    CButton
+    CButton,
+    CHeaderStyleOne
   },
   data () {
     return {
@@ -29,13 +46,8 @@ export default {
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+.container-fluid {
+
 }
 
 .title {

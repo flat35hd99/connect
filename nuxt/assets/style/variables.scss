@@ -1,2 +1,16 @@
 $red: #d51212;
 $blue: rgb(25, 25, 154);
+
+//margin
+.mx-n15{
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+//
+.fluid_fullwidth{
+  padding-left: 0;
+  padding-right: 0;
+  box-sizing: content-box;
+  width: 100vw;
+}

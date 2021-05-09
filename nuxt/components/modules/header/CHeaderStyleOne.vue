@@ -15,14 +15,16 @@ export default {
           display: inline-block;
           content: "";
           width: 3px;
-          height: 10px;
+          height: 100%;
           background-color: red;
           margin-right: 5px;
       }
+      height: 34px;
       margin: 10px 0;
       text-align: left;
       padding-bottom: 10px;
       border-bottom: 1px solid #707070;
       color: black;
+      font-size: 24px;
   }
 </style>

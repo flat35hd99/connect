@@ -38,6 +38,7 @@ export default {
 
 <style lang="scss" scoped>
     .button{
+        display: inline-block;
         background-color: red;
         color: white;
         padding: 10px;
