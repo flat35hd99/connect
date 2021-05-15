@@ -3,24 +3,28 @@
     <div class="row mb-5">
       <div class="col-12 fluid_fullwidth">
         <div class="img__wrapper">
-          <img src="watch/youtube_dummy.png" alt="">
+          <img src="watch/youtube_dummy.png" alt="" />
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-md-6">
-        <c-header-style-one>トークでの気づきを発信しましょう！</c-header-style-one>
+        <c-header-style-one
+          >トークでの気づきを発信しましょう！</c-header-style-one>
         <p>トーク視聴中の気づきを下のボタンから発信しましょう！</p>
         <div class="text-center">
           <form action="" method="post">
-            <input type="text" name="yes" placeholder="その考えおもろ">
-            <input type="submit" value="あっ！！">
+            <input type="text" name="yes" placeholder="その考えおもろ" />
+            <input type="submit" value="あっ！！" />
           </form>
         </div>
       </div>
       <div class="col-md-6">
         <div class="text-center">
-          <c-button :href="watchLink">拍手ボタン</c-button>
+          <c-button>拍手ボタン</c-button>
+          <button v-on:click="submitClap()">拍手</button>
+          <button v-on:click="submitWhistle()">口笛</button>
+          <button v-on:click="submitLaugh()">笑い声</button>
         </div>
       </div>
     </div>
@@ -30,6 +34,7 @@
 <script>
 import CButton from '~/components/modules/CButton'
 import CHeaderStyleOne from '~/components/modules/header/CHeaderStyleOne'
+import firebase from '~/plugins/firebase'
 export default {
   components: {
     CButton,
@@ -41,26 +46,77 @@ export default {
       chooseLink: '/chooseSeat/',
       watchLink: '/watch/'
     }
+  },
+  created () {
+    this.db = firebase.firestore()
+  },
+  methods: {
+    // DBにデータを送信する
+    submitClap () {
+      // 先程作った「sample」というコレクションを取得する
+      const collection = this.db.collection('action')
+      const timeStamp = Math.round((new Date()).getTime())
+      // 「sample」というコレクションに対して {} で定義した情報を add する
+      collection.add({
+        isClap: true,
+        isWhistle: false,
+        isLaugh: false,
+        time: timeStamp
+      }).then(function (docRef) {
+        // 保存に成功した時
+        console.log('Document written with ID: ', docRef.id)
+      }).catch(function (error) {
+        // 保存に失敗した時
+        console.error('Error adding document: ', error)
+      })
+    },
+    submitWhistle () {
+      // 先程作った「sample」というコレクションを取得する
+      const collection = this.db.collection('action')
+      const timeStamp = Math.round((new Date()).getTime())
+      // 「sample」というコレクションに対して {} で定義した情報を add する
+      collection.add({
+        isClap: false,
+        isWhistle: true,
+        isLaugh: false,
+        time: timeStamp
+      }).then(function (docRef) {
+        // 保存に成功した時
+        console.log('Document written with ID: ', docRef.id)
+      }).catch(function (error) {
+        // 保存に失敗した時
+        console.error('Error adding document: ', error)
+      })
+    },
+    submitLaugh () {
+      // 先程作った「sample」というコレクションを取得する
+      const collection = this.db.collection('action')
+      const timeStamp = Math.round((new Date()).getTime())
+      // 「sample」というコレクションに対して {} で定義した情報を add する
+      collection.add({
+        isClap: false,
+        isWhistle: false,
+        isLaugh: true,
+        time: timeStamp
+      }).then(function (docRef) {
+        // 保存に成功した時
+        console.log('Document written with ID: ', docRef.id)
+      }).catch(function (error) {
+        // 保存に失敗した時
+        console.error('Error adding document: ', error)
+      })
+    }
   }
 }
 </script>
 
 <style>
 .container-fluid {
-
 }
 
 .title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;
