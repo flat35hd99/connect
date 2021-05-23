@@ -7,37 +7,61 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row mb-5">
       <div class="col-md-6">
-        <c-header-style-one
-          >トークでの気づきを発信しましょう！</c-header-style-one>
+        <c-header-style-one>トークでの気づきを発信しましょう！</c-header-style-one>
         <p>トーク視聴中の気づきを下のボタンから発信しましょう！</p>
         <div class="text-center">
           <form action="" method="post">
             <input type="text" name="yes" placeholder="その考えおもろ" />
-            <input type="submit" value="あっ！！" />
+            <input class="reaction_button" type="submit" value="あっ！！" />
           </form>
         </div>
       </div>
       <div class="col-md-6">
         <div class="text-center">
-          <c-button>拍手ボタン</c-button>
-          <button v-on:click="submitClap()">拍手</button>
-          <button v-on:click="submitWhistle()">口笛</button>
-          <button v-on:click="submitLaugh()">笑い声</button>
+          <c-header-style-one>スピーカーさんに拍手を送ろう！</c-header-style-one>
+          <p>（アイコンにしよ）</p>
+          <div class="d-flex justify-content-around ">
+            <button class="reaction_button color_inforange" v-on:click="submitClap()">拍手</button>
+            <button class="reaction_button color_infred" v-on:click="submitWhistle()">口笛</button>
+            <button class="reaction_button color_infblue" v-on:click="submitLaugh()">笑い声</button>
+          </div>
         </div>
+      </div>
+    </div>
+    <div class="row mb-5">
+      <div class="col-md-6">
+        <c-header-style-one color_infblue>ブレイク</c-header-style-one>
+        <p>00:00~から〇〇にてブレイクタイムを設けています。参加希望の方は下のボタンからご参加ください！</p>
+      </div>
+      <div class="col-md-6">
+        <div class="img__wrapper">
+          <img src="watch/youtube_dummy.png" alt="" />
+        </div>
+      </div>
+    </div>
+    <div class="row mb-5">
+      <div class="col-md-6">
+        <div class="img__wrapper">
+          <img src="watch/youtube_dummy.png" alt="" />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <c-header-style-one color_inforange>休憩中は...</c-header-style-one>
+        <p>00:00~トークの間の休憩中は、ちょっと背伸びして、気づきを整理しましょう。整理し終わったらまた違う視点でもトークを楽しんでください！</p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import CButton from '~/components/modules/CButton'
+// import CButton from '~/components/modules/CButton'
 import CHeaderStyleOne from '~/components/modules/header/CHeaderStyleOne'
 import firebase from '~/plugins/firebase'
 export default {
   components: {
-    CButton,
+    // CButton,
     CHeaderStyleOne
   },
   data () {
@@ -110,10 +134,30 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .container-fluid {
 }
-
+.reaction_button{
+    display: inline-block;
+    flex-basis: 30%;
+    background-color: $inf-red;
+    color: white;
+    padding: 10px;
+    border: none;
+    font-size: 18px;
+    &.color_infred{
+      background-color: $inf-red;
+    }
+    &.color_inforange{
+      background-color: $inf-orange;
+    }
+    &.color_inflightblue{
+      background-color: $inf-light-blue;
+    }
+    &.color_infblue{
+      background-color: $inf-blue;
+    }
+}
 .title {
   font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
