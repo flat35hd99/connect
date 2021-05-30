@@ -63,7 +63,7 @@ export default {
       text-align: left;
       padding-bottom: 10px;
       border-bottom: 1px solid #707070;
-      color: black;
+      color: $white;
       font-size: 24px;
   }
 </style>

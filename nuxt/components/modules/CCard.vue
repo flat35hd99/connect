@@ -3,8 +3,8 @@
         :is="isInternalLink() ? 'nuxt-link' : 'a'"
         :to="isInternalLink() ? href : ''"
         :href="isInternalLink() ? '' : href"
-        class="button btn"
-        :class="isdisabled"
+        class="button"
+        :class="{color_red, color_blue}"
       >
         <slot>ボタン</slot>
       </component>
@@ -26,24 +26,7 @@ export default {
     color_blue: {
       type: Boolean,
       default: false
-    },
-    isOpen: {
-      type: Boolean,
-      default: false
     }
-  },
-  data () {
-    const isDisabled = 'disabled'
-    return {
-      isdisabled: isDisabled
-    }
-  },
-  created () {
-    setInterval(() => {
-      if (this.isOpen) {
-        this.isdisabled = ''
-      }
-    }, 1000)
   },
   methods: {
     isInternalLink () {

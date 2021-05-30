@@ -1,7 +1,15 @@
+@import "variables";
 .img__wrapper{
   width: 100%;
   text-align: center;
   img{
     width: 100%;
   }
+}
+
+body,html{
+  background-color: $black;
+}
+.h1,h2,h3,h4,h5,h6,p{
+  color: $white;
 }

@@ -43,7 +43,7 @@ nav {
       list-style-type: none;
       margin-left: 15px;
       a {
-        color: #303030;
+        color: $white;
       }
     }
   }
