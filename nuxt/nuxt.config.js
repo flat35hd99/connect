@@ -38,7 +38,7 @@ export default {
   plugins: [
     '~/plugins/firebase',
     {
-      src: '@/plugins/plugin',
+      src: '@/plugins/countdown',
       mode: 'client'
     }
   ],

@@ -121,8 +121,6 @@ export default {
     const eventDate = new Date(2021, 6, 4, 13, 0)
     setInterval(function () {
       const now = new Date()
-      console.log(eventDate - now)
-      console.log(self.isOpen)
       if ((eventDate - now) < 0) {
         self.isOpen = true
       }
