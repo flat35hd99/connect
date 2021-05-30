@@ -2,6 +2,8 @@
   <div class="header">
     <div class="header__logoarea">
       <img class="header__logo" src="logo/TEDxNagoyaU_1line_noback_whitetext.png" alt="">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap" rel="stylesheet">
     </div>
     <!--開発時に入れるメニュー-->
     <c-global-header-nav></c-global-header-nav>

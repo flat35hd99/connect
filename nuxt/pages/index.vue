@@ -1,62 +1,66 @@
 <template>
-  <div class="container-fluid">
-    <div class="row mb-5">
-      <div class="col-12 fluid_fullwidth">
-        <div class="img__wrapper">
-          <img src="watch/youtube_dummy.png" alt="" />
+  <div>
+    <div class="container-fluid">
+      <div class="row mb-5">
+        <div class="col-12 fluid_fullwidth">
+          <div class="img__wrapper">
+            <img src="watch/youtube_dummy.png" alt="" />
+          </div>
         </div>
       </div>
     </div>
-    <div class="row mb-5">
-      <div class="col-md-6 fluid_fullwidth text-center">
-        <countdown :time="time" :interval="100" v-slot="{ days, hours, minutes, seconds}">
-          <template>
-              <h2>開場まであと：{{ days }} 日 {{ hours }} 時 {{ minutes }} 分 {{ seconds }} 秒</h2>
-          </template>
-        </countdown>
-      </div>
-      <div class="col-md-6 fluid_fullwidth text-center">
-        <c-button :isOpen="isOpen" href="https://manager.line.biz/account/@631ujunf/setting" color_red>席を選ぶ</c-button>
-      </div>
-    </div>
-    <div class="row mb-5">
-      <div class="col-md-6">
-        <c-header-style-one>Time Schedule</c-header-style-one>
-        <div class="img__wrapper">
-          <img src="timeSchedule.png" alt="" />
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-md-6 fluid_fullwidth text-center">
+          <countdown :time="time" :interval="100" v-slot="{ days, hours, minutes, seconds}">
+            <template>
+                <h2>開場まであと：{{ days }} 日 {{ hours }} 時 {{ minutes }} 分 {{ seconds }} 秒</h2>
+            </template>
+          </countdown>
+        </div>
+        <div class="col-md-6 fluid_fullwidth text-center">
+          <c-button :isOpen="isOpen" href="https://manager.line.biz/account/@631ujunf/setting" color_red>席を選ぶ</c-button>
         </div>
       </div>
-      <div class="col-md-6">
-        <c-header-style-one>ブレイクとは？</c-header-style-one>
-        <c-header-style-one>Connectとは？</c-header-style-one>
+      <div class="row mb-5">
+        <div class="col-md-6">
+          <c-header-style-one>Time Schedule</c-header-style-one>
+          <div class="img__wrapper">
+            <img src="timeSchedule.png" alt="" />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <c-header-style-one>ブレイクとは？</c-header-style-one>
+          <c-header-style-one>Connectとは？</c-header-style-one>
+        </div>
       </div>
-    </div>
-    <div class="row mb-5">
-      <div class="col-12">
-        <c-header-style-one>スピーカーさん情報</c-header-style-one>
-        <p>スピーカーさんに詳しくなった上でトークを聞くと、一層言葉に重みが増します。ぜひ見てね</p>
-        <div class="row">
-          <div
-            class="col-md-4 d-flex justify-content-center mb-4"
-            v-for="speaker in speakers"
-            :key="speaker"
-            >
-            <div class="card" style="width: 18rem;">
-              <img class="card-img-top" :src="speaker.img" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">{{speaker.name}}</h5>
-                <p class="card-text">{{speaker.desc}}</p>
-                <a href="#" class="btn">インスタとか</a>
+      <div class="row mb-5">
+        <div class="col-12">
+          <c-header-style-one>スピーカーさん情報</c-header-style-one>
+          <p>スピーカーさんに詳しくなった上でトークを聞くと、一層言葉に重みが増します。ぜひ見てね</p>
+          <div class="row">
+            <div
+              class="col-md-4 d-flex justify-content-center mb-4"
+              v-for="speaker in speakers"
+              :key="speaker"
+              >
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" :src="speaker.img" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{speaker.name}}</h5>
+                  <p class="card-text">{{speaker.desc}}</p>
+                  <a href="#" class="btn">instagram</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="row mb-5">
-      <div class="col-12">
-        <c-header-style-one>協賛企業様一覧</c-header-style-one>
-        <p>やめとく？</p>
+      <div class="row mb-5">
+        <div class="col-12">
+          <c-header-style-one>協賛企業様一覧</c-header-style-one>
+          <p>やめとく？</p>
+        </div>
       </div>
     </div>
   </div>
@@ -73,7 +77,7 @@ export default {
   data () {
     const now = new Date()
     // 2021 6(7), 4, 13, 0
-    const eventDate = new Date(2021, 6, 4, 13, 0)
+    const eventDate = new Date(2021, 5, 5, 13, 0)
     return {
       waitingLink: '/waiting/',
       chooseLink: '/chooseSeat/',
@@ -118,7 +122,7 @@ export default {
   },
   created () {
     const self = this
-    const eventDate = new Date(2021, 6, 4, 13, 0)
+    const eventDate = new Date(2021, 4, 5, 13, 0)
     setInterval(function () {
       const now = new Date()
       if ((eventDate - now) < 0) {
@@ -161,13 +165,26 @@ export default {
 .button{
   width: 80%;
   font-size: 20px;
+  background: linear-gradient(to right, $inf-orange, $inf-red, $inf-orange);
+  background-size: 200% auto;
+  border: none;
+  transition: all 1s ease;
+  &:hover{
+    background-position: right center;
+  }
 }
 
 .card{
   background-color: lighten($color: $black, $amount: 10%);
   .btn{
-    background-color: $inf-red;
+    background: linear-gradient(to right, $inf-orange, $inf-red, $inf-orange);
+    background-size: 200% auto;
+    transition: all 1s ease;
     color: $white;
+    border: none;
+    &:hover{
+      background-position: right center;
+    }
   }
 }
 </style>

@@ -12,20 +12,19 @@
         <c-header-style-one>トークでの気づきを発信しましょう！</c-header-style-one>
         <p>トーク視聴中の気づきを下のボタンから発信しましょう！</p>
         <div class="text-center">
-          <form action="" method="post">
-            <input type="text" name="yes" placeholder="その考えおもろ" />
-            <input class="reaction_button" type="submit" value="あっ！！" />
+          <form class="reaction_form" action="" method="post">
+            <input class="reaction_yes" type="text" name="yes" placeholder="その考えおもろ" />
+            <input class="reaction_button color_infblue" type="submit" value="あっ！！" />
           </form>
         </div>
       </div>
       <div class="col-md-6">
         <div class="text-center">
           <c-header-style-one>スピーカーさんに拍手を送ろう！</c-header-style-one>
-          <p>（アイコンにしよ）</p>
           <div class="d-flex justify-content-around ">
-            <button class="reaction_button color_inforange" v-on:click="submitClap()">拍手</button>
+            <button class="reaction_button color_infred" v-on:click="submitClap()">拍手</button>
             <button class="reaction_button color_infred" v-on:click="submitWhistle()">口笛</button>
-            <button class="reaction_button color_infblue" v-on:click="submitLaugh()">笑い声</button>
+            <button class="reaction_button color_infred" v-on:click="submitLaugh()">笑い声</button>
           </div>
         </div>
       </div>
@@ -137,6 +136,14 @@ export default {
 <style lang="scss">
 .container-fluid {
 }
+.reaction_form{
+  display: flex;
+  justify-content: center;
+  .reaction_yes{
+    width: 100%;
+    margin-right: 10%;
+  }
+}
 .reaction_button{
     display: inline-block;
     flex-basis: 30%;
@@ -146,18 +153,23 @@ export default {
     border: none;
     font-size: 18px;
     &.color_infred{
-      background-color: $inf-red;
-    }
-    &.color_inforange{
-      background-color: $inf-orange;
-    }
-    &.color_inflightblue{
-      background-color: $inf-light-blue;
+      background: linear-gradient(to right, $inf-orange, $inf-red, $inf-orange);
+      background-size: 200% auto;
+      transition: all 1s ease;
+      &:hover{
+        background-position: right center;
+      }
     }
     &.color_infblue{
-      background-color: $inf-blue;
+      background: linear-gradient(to right, $inf-light-blue, lighten($inf-blue, 10%), $inf-light-blue);
+      background-size: 200% auto;
+      transition: all .5s ease;
+      &:hover{
+        background-position: right center;
+      }
     }
 }
+
 .title {
   font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;

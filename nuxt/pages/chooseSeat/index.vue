@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div class="container">
     <div class="row">
       <div class="col-12 mb-3">
         <c-header-style-one>Please choose your seat!</c-header-style-one>
