@@ -19,7 +19,7 @@
           </countdown>
         </div>
         <div class="col-md-6 fluid_fullwidth text-center">
-          <c-button :isOpen="isOpen" href="https://manager.line.biz/account/@631ujunf/setting" color_red>席を選ぶ</c-button>
+          <c-button :isOpen="isOpen" href="/chooseSeat/" color_red>席を選ぶ</c-button>
         </div>
       </div>
       <div class="row mb-5">
