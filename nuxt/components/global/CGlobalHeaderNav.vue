@@ -6,9 +6,6 @@
           <nuxt-link to="/">トップ</nuxt-link>
         </li>
         <li>
-          <nuxt-link :to="waitingLink">待機</nuxt-link>
-        </li>
-        <li>
           <nuxt-link :to="chooseLink">席選択</nuxt-link>
         </li>
         <li>
@@ -23,7 +20,6 @@
 export default {
   data () {
     return {
-      waitingLink: '/waiting/',
       chooseLink: '/chooseSeat/',
       watchLink: '/watch/'
     }
@@ -43,7 +39,7 @@ nav {
       list-style-type: none;
       margin-left: 15px;
       a {
-        color: #303030;
+        color: $white;
       }
     }
   }

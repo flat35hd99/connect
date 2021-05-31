@@ -1,22 +1,35 @@
 <template>
   <div class="container">
-    <div>
-      <h1 class="title">
-        席を選択ページ
-      </h1>
-      <c-button href="/" color_blue> トップへ </c-button>
-      <c-button :href="waitingLink"> 待機ページへ </c-button>
-      <c-button :href="chooseLink" color_blue> 席を選択ページへ </c-button>
-      <c-button :href="watchLink"> 視聴用ページへ </c-button>
+    <div class="row">
+      <div class="col-12 mb-3">
+        <c-header-style-one>Please choose your seat!</c-header-style-one>
+        <p>
+          下のの会場図から席を選択しましょう！<br>
+          指定した席からの映像を見ることができます。
+        </p>
+        <!--
+        <div class="text-center">
+          <c-button :href="watchLink">この席にする！</c-button>
+        </div>
+        -->
+      </div>
+      <div class="col-12">
+        <div class="img__wrapper">
+          <img src="chooseseat/hole.png" alt="">
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import CButton from '~/components/modules/CButton'
+// import CButton from '~/components/modules/CButton'
+import CHeaderStyleOne from '~/components/modules/header/CHeaderStyleOne'
+
 export default {
   components: {
-    CButton
+    // CButton,
+    CHeaderStyleOne
   },
   data () {
     return {
@@ -28,27 +41,14 @@ export default {
 }
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
+<style lang=scss>
+.container-fluid {
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 }
 
 .title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;
@@ -66,5 +66,13 @@ export default {
 
 .links {
   padding-top: 15px;
+}
+
+.img__wrapper{
+  width: 100%;
+  text-align: center;
+  img{
+    width: 100%;
+  }
 }
 </style>

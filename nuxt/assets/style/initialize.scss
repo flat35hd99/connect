@@ -1,0 +1,16 @@
+@import "variables";
+.img__wrapper{
+  width: 100%;
+  text-align: center;
+  img{
+    width: 100%;
+  }
+}
+
+body,html{
+  background-color: $black;
+  font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+}
+.h1,h2,h3,h4,h5,h6,p{
+  color: $white;
+}

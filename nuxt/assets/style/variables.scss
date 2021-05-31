@@ -1,2 +1,22 @@
 $red: #d51212;
+$inf-red: rgb(253,34,107);
+$inf-orange: rgb(254,179,52);
+$inf-blue: rgb(30,119,242);
+$inf-light-blue: rgb(38,215,213);
 $blue: rgb(25, 25, 154);
+$black: rgb(33, 33, 33);
+$white: #fff;
+
+//margin
+.mx-n15{
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+//
+.fluid_fullwidth{
+  padding-left: 0;
+  padding-right: 0;
+  box-sizing: content-box;
+  width: 100vw;
+}
