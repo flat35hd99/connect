@@ -6,7 +6,7 @@
       <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap" rel="stylesheet">
     </div>
     <!--開発時に入れるメニュー-->
-    <c-global-header-nav></c-global-header-nav>
+    <!--<c-global-header-nav></c-global-header-nav>-->
   </div>
 </template>
 
