@@ -86,8 +86,8 @@
                   <td>YouTube</td>
                 </tr>
                 <tr class="bg_blue">
-                  <th scope="row">懇親会</th>
-                  <td>17:45~18:45</td>
+                  <th scope="row">懇親会(任意)</th>
+                  <td>17:45(~18:45)</td>
                   <td>Zoom(任意)</td>
                 </tr>
               </tbody>
