@@ -2,8 +2,15 @@
   <div class="container-fluid">
     <div class="row mb-5">
       <div class="col-12 fluid_fullwidth">
-        <div class="img__wrapper">
-          <img src="watch/youtube_dummy.png" alt="" />
+        <div class="frame-wrapper__video">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/GLIhyHy3ORI?controls=0"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
         </div>
       </div>
     </div>
@@ -134,6 +141,7 @@ export default {
 </script>
 
 <style lang="scss">
+
 .container-fluid {
 }
 .reaction_form{
