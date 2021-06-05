@@ -6,7 +6,7 @@
           <iframe
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/GLIhyHy3ORI?controls=0"
+            :src="youtubeUrls.hoge"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -75,6 +75,13 @@ export default {
       waitingLink: '/waiting/',
       chooseLink: '/chooseSeat/',
       watchLink: '/watch/'
+    }
+  },
+  async asyncData ({ $axios }) {
+    const requestUrl = 'https://raw.githubusercontent.com/flat35hd99/data-provider/main/data.json'
+    const result = await $axios.$get(requestUrl)
+    return {
+      youtubeUrls: result
     }
   },
   created () {
