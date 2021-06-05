@@ -106,7 +106,7 @@ export default {
   },
   created () {
     this.db = firebase.firestore()
-    console.log(this.Urls)
+    console.log(this.Urls.youtube.watch2)
   },
   methods: {
     // DBにデータを送信する
