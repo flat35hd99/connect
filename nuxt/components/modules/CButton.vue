@@ -29,7 +29,7 @@ export default {
     },
     isOpen: {
       type: Boolean,
-      default: false
+      default: true
     }
   },
   data () {
