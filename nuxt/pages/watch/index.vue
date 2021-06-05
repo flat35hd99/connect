@@ -3,14 +3,7 @@
     <div class="row mb-5">
       <div class="col-12 fluid_fullwidth">
         <div class="frame-wrapper__video">
-          <iframe
-            width="560"
-            height="315"
-            src="https://youtu.be/00YaLKTF3mk&autoplay=1"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/00YaLKTF3mk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
     </div>
