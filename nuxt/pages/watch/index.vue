@@ -6,7 +6,7 @@
           <iframe
             width="560"
             height="315"
-            :src="youtubeUrls.hoge"
+            :src="Urls.youtube.watch1"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -36,38 +36,58 @@
         </div>
       </div>
     </div>
-    <div class="row mb-5">
-      <div class="col-md-6">
-        <c-header-style-one color_infblue>ブレイク</c-header-style-one>
-        <p>00:00~から〇〇にてブレイクタイムを設けています。参加希望の方は下のボタンからご参加ください！</p>
+    <div class="row py-5">
+      <div class="col-md-8">
+        <c-header-style-one color_infblue>Break1</c-header-style-one>
+        <p>
+          事前にお申し込みいただいたブレイクはこちらからご参加ください！<br>
+          前日のリマインドメールにご希望されたブース番号が書いてありますので、
+          ご確認の上ご参加ください。
+          聞き流しコンテンツをご希望された方は、このままお楽しみください。
+        </p>
+        <p>※定員が決まっておりますので、お間違いのないようよろしくお願いいたします。</p>
+        <div class="d-flex justify-content-around text-center py-md-5 py-2">
+          <c-button class="reaction_button color_infred" :href="Urls.zoom.break1.booth1">ブース１に参加</c-button>
+          <c-button class="reaction_button color_infred" :href="Urls.zoom.break1.booth1">ブース２に参加</c-button>
+        </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-4">
         <div class="img__wrapper">
-          <img src="watch/youtube_dummy.png" alt="" />
+          <img src="watch/break1.png" alt="" />
         </div>
       </div>
     </div>
     <div class="row mb-5">
-      <div class="col-md-6">
+      <div class="col-md-4 order-2 order-md-1">
         <div class="img__wrapper">
-          <img src="watch/youtube_dummy.png" alt="" />
+          <img src="watch/break2.png" alt="" />
         </div>
       </div>
-      <div class="col-md-6">
-        <c-header-style-one color_inforange>休憩中は...</c-header-style-one>
-        <p>00:00~トークの間の休憩中は、ちょっと背伸びして、気づきを整理しましょう。整理し終わったらまた違う視点でもトークを楽しんでください！</p>
+      <div class="col-md-8 order-1 order-md-2">
+        <c-header-style-one color_inforange>Break2</c-header-style-one>
+        <p>
+          事前にお申し込みいただいたブレイクはこちらからご参加ください！<br>
+          前日のリマインドメールにご希望されたブース番号が書いてありますので、
+          ご確認の上ご参加ください。
+          聞き流しコンテンツをご希望された方は、このままお楽しみください。
+        </p>
+        <p>※定員が決まっておりますので、お間違いのないようよろしくお願いいたします。</p>
+        <div class="d-flex justify-content-around text-center py-md-5 py-2">
+          <c-button class="reaction_button color_infblue" :href="Urls.zoom.break1.booth1">ブース１に参加</c-button>
+          <c-button class="reaction_button color_infblue" :href="Urls.zoom.break1.booth1">ブース２に参加</c-button>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-// import CButton from '~/components/modules/CButton'
+import CButton from '~/components/modules/CButton'
 import CHeaderStyleOne from '~/components/modules/header/CHeaderStyleOne'
 import firebase from '~/plugins/firebase'
 export default {
   components: {
-    // CButton,
+    CButton,
     CHeaderStyleOne
   },
   data () {
@@ -78,10 +98,10 @@ export default {
     }
   },
   async asyncData ({ $axios }) {
-    const requestUrl = 'https://raw.githubusercontent.com/flat35hd99/data-provider/main/data.json'
-    const result = await $axios.$get(requestUrl)
+    const requestUrl = 'https://raw.githubusercontent.com/TEDxNagoyaU/data-provider/main/data.json'
+    const resultJson = await $axios.$get(requestUrl)
     return {
-      youtubeUrls: result
+      Urls: resultJson
     }
   },
   created () {
