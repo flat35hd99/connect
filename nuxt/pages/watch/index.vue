@@ -38,7 +38,7 @@
     </div>
     <div class="row py-5">
       <div class="col-md-8">
-        <c-header-style-one color_infblue>Break1</c-header-style-one>
+        <c-header-style-one color_infblue>Break1(14:50~)</c-header-style-one>
         <p>
           事前にお申し込みいただいたブレイクはこちらからご参加ください！<br>
           前日のリマインドメールにご希望されたブース番号が書いてありますので、
@@ -64,7 +64,7 @@
         </div>
       </div>
       <div class="col-md-8 order-1 order-md-2">
-        <c-header-style-one color_inforange>Break2</c-header-style-one>
+        <c-header-style-one color_inforange>Break2(16:35~)</c-header-style-one>
         <p>
           事前にお申し込みいただいたブレイクはこちらからご参加ください！<br>
           前日のリマインドメールにご希望されたブース番号が書いてありますので、
