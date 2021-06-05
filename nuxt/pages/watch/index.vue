@@ -100,6 +100,8 @@ export default {
   async asyncData ({ $axios }) {
     const requestUrl = 'https://raw.githubusercontent.com/TEDxNagoyaU/data-provider/main/data.json'
     const resultJson = await $axios.$get(requestUrl)
+    console.log(resultJson)
+    console.log(resultJson.youtube.watch1)
     return {
       Urls: resultJson
     }
