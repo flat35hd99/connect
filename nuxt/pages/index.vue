@@ -125,7 +125,7 @@
 <script>
 import CButton from '~/components/modules/CButton'
 import CHeaderStyleOne from '~/components/modules/header/CHeaderStyleOne'
-const eventDate = new Date(2021, 5, 6, 13, 48)
+const eventDate = new Date(2021, 5, 6, 12, 58)
 export default {
   components: {
     CButton,
