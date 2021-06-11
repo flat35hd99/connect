@@ -20,7 +20,7 @@
         </div>
         <div class="col-md-6 fluid_fullwidth text-center">
           <!--リハ中は直接視聴ページへ遷移-->
-          <c-button :isOpen="isOpen" href="/watch/" color_red>席を選ぶ(6/6は直接視聴ページへ)</c-button>
+          <c-button :isOpen="isOpen" href="/chooseSeat/" color_red>席を選ぶ</c-button>
         </div>
       </div>
       <div class="row mb-5">
@@ -125,7 +125,7 @@
 <script>
 import CButton from '~/components/modules/CButton'
 import CHeaderStyleOne from '~/components/modules/header/CHeaderStyleOne'
-const eventDate = new Date(2021, 5, 6, 12, 58)
+const eventDate = new Date(2021, 6, 4, 12, 58)
 export default {
   components: {
     CButton,
