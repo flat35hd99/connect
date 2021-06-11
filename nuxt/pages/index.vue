@@ -99,7 +99,6 @@
       <div class="row mb-5">
         <div class="col-12">
           <c-header-style-one>Speaker Information</c-header-style-one>
-          <p class="text-center">Coming Soon...</p>
           <div class="row">
             <div
               class="col-md-4 d-flex justify-content-center mb-4"
@@ -110,6 +109,7 @@
                 <img class="card-img-top" :src="speaker.img" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">{{speaker.name}}</h5>
+                  <p class="card-text font-bold">{{speaker.title}}</p>
                   <p class="card-text">{{speaker.desc}}</p>
                   <a href="#" class="btn">Coming Soon</a>
                 </div>
@@ -125,6 +125,7 @@
 <script>
 import CButton from '~/components/modules/CButton'
 import CHeaderStyleOne from '~/components/modules/header/CHeaderStyleOne'
+const eventDate = new Date(2021, 6, 4, 12, 58)
 export default {
   components: {
     CButton,
@@ -133,7 +134,6 @@ export default {
   data () {
     const now = new Date()
     // 2021 6(7), 4, 13, 0
-    const eventDate = new Date(2021, 6, 4, 13, 0)
     return {
       waitingLink: '/waiting/',
       chooseLink: '/chooseSeat/',
@@ -142,35 +142,40 @@ export default {
       isOpen: false,
       speakers: [
         {
-          name: 'Speaker1',
-          desc: '???',
-          img: 'speaker/person1.png',
+          name: '魚住晴香',
+          title: '名古屋大学文学部４年',
+          desc: '詳細：Coming Soon...',
+          img: 'speaker/魚住さん写真.jpg',
           Link: '/'
 
         },
         {
-          name: 'Speaker2',
-          desc: '???',
-          img: 'speaker/person1.png',
+          name: '石井敬子',
+          title: '名古屋大学大学院情報学研究科心理・認知科学専攻　准教授',
+          desc: '詳細：Coming Soon...',
+          img: 'speaker/石井敬子さん写真.jpg',
           Link: '/'
 
         },
         {
-          name: 'Speaker3',
-          desc: '???',
-          img: 'speaker/person1.png',
+          name: '菱谷和明',
+          title: '株式会社NEXTRA CEO',
+          desc: '詳細：Coming Soon...',
+          img: 'speaker/菱谷さん写真.jpg',
           Link: '/'
         },
         {
-          name: 'Speaker4',
-          desc: '???',
-          img: 'speaker/person1.png',
+          name: '佐々木あみ',
+          title: '名古屋大学法学部４年',
+          desc: '詳細：Coming Soon...',
+          img: 'speaker/佐々木さん写真.jpg',
           Link: '/'
         },
         {
-          name: 'Speaker5',
-          desc: '???',
-          img: 'speaker/person1.png',
+          name: '倉本美津留',
+          title: '放送作家',
+          desc: '詳細：Coming Soon...',
+          img: 'speaker/倉本さん写真.jpg',
           Link: '/'
         }
       ]
@@ -178,7 +183,6 @@ export default {
   },
   created () {
     const self = this
-    const eventDate = new Date(2021, 6, 4, 13, 0)
     setInterval(function () {
       const now = new Date()
       if ((eventDate - now) < 0) {
@@ -235,6 +239,10 @@ export default {
 
 .card{
   background-color: lighten($color: $black, $amount: 10%);
+  &-img-top{
+    width: 100%;
+    object-fit: cover;
+  }
   .btn{
     background: linear-gradient(to right, $inf-orange, $inf-red, $inf-orange);
     background-size: 200% auto;
