@@ -144,7 +144,7 @@ export default {
         {
           name: '魚住晴香',
           title: '名古屋大学文学部４年',
-          desc: 'Coming Soon...',
+          desc: '詳細：Coming Soon...',
           img: 'speaker/魚住さん写真.jpg',
           Link: '/'
 
@@ -152,7 +152,7 @@ export default {
         {
           name: '石井敬子',
           title: '名古屋大学大学院情報学研究科心理・認知科学専攻　准教授',
-          desc: 'Coming Soon...',
+          desc: '詳細：Coming Soon...',
           img: 'speaker/石井敬子さん写真.jpg',
           Link: '/'
 
@@ -160,21 +160,21 @@ export default {
         {
           name: '菱谷和明',
           title: '株式会社NEXTRA CEO',
-          desc: 'Coming Soon...',
+          desc: '詳細：Coming Soon...',
           img: 'speaker/菱谷さん写真.jpg',
           Link: '/'
         },
         {
           name: '佐々木あみ',
           title: '名古屋大学法学部４年',
-          desc: 'Coming Soon...',
+          desc: '詳細：Coming Soon...',
           img: 'speaker/佐々木さん写真.jpg',
           Link: '/'
         },
         {
           name: '倉本美津留',
           title: '放送作家',
-          desc: 'Coming Soon...',
+          desc: '詳細：Coming Soon...',
           img: 'speaker/倉本さん写真.jpg',
           Link: '/'
         }
