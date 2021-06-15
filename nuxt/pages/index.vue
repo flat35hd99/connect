@@ -14,7 +14,7 @@
         <div class="col-md-6 fluid_fullwidth text-center">
           <countdown :time="time" :interval="100" v-slot="{ days, hours, minutes, seconds}">
             <template>
-                <h2>開場まで：{{ days }} 日 {{ hours }} 時 {{ minutes }} 分 {{ seconds }} 秒</h2>
+                <h2>開場まで：{{ days }} 日 {{ hours }} 時間 {{ minutes }} 分 {{ seconds }} 秒</h2>
             </template>
           </countdown>
         </div>
@@ -105,13 +105,24 @@
               v-for="speaker in speakers"
               :key="speaker"
               >
-              <div class="card" style="width: 18rem;">
+              <div class="card">
                 <img class="card-img-top" :src="speaker.img" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">{{speaker.name}}</h5>
                   <p class="card-text font-bold">{{speaker.title}}</p>
+                  <p class="card-text font-bold">トークテーマ<br>{{speaker.theme}}</p>
                   <p class="card-text">{{speaker.desc}}</p>
-                  <a href="#" class="btn">Coming Soon</a>
+                  <ul class="follow-me">
+                    <li
+                      v-for="link in speaker.links"
+                      :key="link">
+                      <a
+                      :href="link"
+                      target="_blank"
+                      rel="noopner">
+                      </a>
+                    </li>
+                   </ul>
                 </div>
               </div>
             </div>
@@ -144,39 +155,46 @@ export default {
         {
           name: '魚住晴香',
           title: '名古屋大学文学部４年',
-          desc: '詳細：Coming Soon...',
+          theme: 'コンプレックスが教えてくれた、ありのまま自分らしく生きること',
+          desc: '名古屋大学４年。コロナ禍で肌荒れに悩み、その経験から持った違和感を、ありのままの状態でSNSで発信。現在は大学に通いながらモデレーターや司会業を務める他、キャリア・コンプレックスなどをテーマに発信を行う。',
           img: 'speaker/魚住さん写真.jpg',
-          Link: '/'
+          links: ['https://twitter.com/hrkzum?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor',
+            'https://www.instagram.com/hrkzum/?igshid=snswpe9odh53']
 
         },
         {
           name: '石井敬子',
           title: '名古屋大学大学院情報学研究科心理・認知科学専攻　准教授',
-          desc: '詳細：Coming Soon...',
+          theme: '「人の心はそんな簡単に変わらない」',
+          desc: 'いかに私たちの心の働きやふるまいが社会・文化環境のしがらみから逃れることができないのか、そのことに日々頭を悩ませながら、教育・研究活動をしている。モットーは、「悪魔のような執念、牛のような忍耐」。',
           img: 'speaker/石井敬子さん写真.jpg',
-          Link: '/'
+          links: ['https://twitter.com/KeikoIshii10']
 
         },
         {
           name: '菱谷和明',
           title: '株式会社NEXTRA CEO',
+          theme: '',
           desc: '詳細：Coming Soon...',
           img: 'speaker/菱谷さん写真.jpg',
-          Link: '/'
+          links: ['https://twitter.com/careerlabo_tim?s=20',
+            'https://www.instagram.com/careerlabonagoya/?hl=ja']
         },
         {
           name: '佐々木あみ',
           title: '名古屋大学法学部４年',
+          theme: '',
           desc: '詳細：Coming Soon...',
           img: 'speaker/佐々木さん写真.jpg',
-          Link: '/'
+          links: []
         },
         {
           name: '倉本美津留',
           title: '放送作家',
+          theme: '',
           desc: '詳細：Coming Soon...',
           img: 'speaker/倉本さん写真.jpg',
-          Link: '/'
+          links: []
         }
       ]
     }
