@@ -20,3 +20,43 @@ $white: #fff;
   box-sizing: content-box;
   width: 100vw;
 }
+
+.follow-me {
+  list-style: none;
+  margin: 0 0 -8px;
+  overflow: hidden;
+  padding: 0;
+}
+.follow-me li {
+  float: left;
+  margin: 0 8px 8px 0;
+  padding: 0;
+}
+.follow-me li a::before {
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  color: #fff;
+  display: inline-block;
+  font-family: FontAwesome;
+  font-size: 16px;
+  height: 44px; /* Button height */
+  line-height: 44px; /* Button height */
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  text-align: center;
+  width: 44px; /* Button width */
+}
+
+.follow-me li a[href*="instagram.com"]::before{
+  background: linear-gradient(to right, $inf-orange, $inf-red, $inf-orange);
+  background-size: 200% auto;
+  transition: all 1s ease;
+  content: "\f16d";
+  }
+
+.follow-me li a[href*="twitter.com"]::before{
+  background: linear-gradient(to right, $inf-light-blue, lighten($inf-blue, 10%), $inf-light-blue);
+  background-size: 200% auto;
+  transition: all 1s ease;
+  content: "\f099";
+  }
