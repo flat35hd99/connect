@@ -40,6 +40,52 @@
           </div>
         </div>
       </div>
+      <div class="col-md-6">
+        <c-header-style-one>各チームへの質問・連絡</c-header-style-one>
+        <p>コネクトみながら他チームへ疑問を投げれるよ</p>
+        <p>ラップタイム的な使い方してもいいかも</p>
+        <div class="text-center reaction_form">
+          <select name="example" class="reaction_yes" v-model="toManage">
+            <option value="全体">全体</option>
+            <option value="オーガ">オーガナイズ</option>
+            <option value="スピーカー">スピーカー</option>
+            <option value="コミュニケーション">コミュニケーション</option>
+            <option value="プロモ">プロモ</option>
+            <option value="ショー">ショー</option>
+            <option value="クリエ">クリエ</option>
+          </select>
+          <input class="reaction_yes" type="input" name="yes" v-model="contentManage" placeholder="しつもーんれんらーく" />
+          <button class="reaction_button color_infblue" v-on:click="submitManage()">送信</button>
+        </div>
+        <p class="invisible thanks" id="thanks">Thank you!</p>
+      </div>
+      <div class="col-md-6">
+        <c-header-style-one>各チームへの質問・連絡リスト</c-header-style-one>
+        <div class="text-center reaction_form">
+          <select name="example" class="reaction_yes" v-model="team">
+            <option value="全体">全体</option>
+            <option value="オーガ">オーガナイズ</option>
+            <option value="スピーカー">スピーカー</option>
+            <option value="コミュニケーション">コミュニケーション</option>
+            <option value="プロモ">プロモ</option>
+            <option value="ショー">ショー</option>
+            <option value="クリエ">クリエ</option>
+          </select>
+          <button class="reaction_button color_infblue" v-on:click="getManage()">更新</button>
+        </div>
+        <div class="timeline mt-3">
+          <div
+          class="tweet"
+          v-for="Manage in ManageList"
+          :key='Manage.time'>
+            <div class="d-flex">
+              <p class="mr-2">time:{{Manage.time}}</p>
+              <p class="mr-3">to:{{Manage.to}}</p>
+              <p class="mr-2">{{Manage.content}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
   </div>
@@ -55,7 +101,11 @@ export default {
   data () {
     return {
       word: '全部',
-      yesList: []
+      team: '全体',
+      toYes: '全部',
+      contentYes: '',
+      yesList: [],
+      ManageList: []
     }
   },
   async asyncData ({ $axios }) {
@@ -93,6 +143,40 @@ export default {
         })
       }
       console.log(this.yesList)
+    },
+    getManage () {
+      this.db.collection('manage').where('to', '==', this.team).onSnapshot((docs) => {
+        this.ManageList = [] // リアルタイム反映のため一度リセット
+        docs.forEach((doc) => {
+          const manage = doc.data()
+          manage.id = doc.id // 一意のドキュメントIDをプロパティに追加（後のupdateやdeleteでドキュメントIDが必要なため）
+          manage.time = new Date(manage.time).toLocaleTimeString()
+          this.ManageList.push(manage)
+        })
+      })
+    },
+    submitManage () {
+      // 先程作った「sample」というコレクションを取得する
+      const collection = this.db.collection('manage')
+      const timeStamp = Math.round((new Date()).getTime())
+      // 「sample」というコレクションに対して {} で定義した情報を add する
+      collection.add({
+        to: this.toManage,
+        content: this.contentManage,
+        time: timeStamp
+      }).then(function (docRef) {
+        // 保存に成功した時
+        console.log('Document written with ID: ', docRef.id)
+        const thanks = document.getElementById('thanks')
+        thanks.classList.remove('invisible')
+        setTimeout(function () {
+          thanks.classList.add('invisible')
+        }, 4000)
+      }).catch(function (error) {
+        // 保存に失敗した時
+        console.error('Error adding document: ', error)
+      })
+      this.contentManage = ''
     }
   }
 }
