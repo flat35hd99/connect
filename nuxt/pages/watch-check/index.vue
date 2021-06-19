@@ -6,7 +6,7 @@
           <iframe
             width="560"
             height="315"
-            :src="Urls.youtube.production"
+            :src="Urls.youtube.check"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -106,7 +106,7 @@ export default {
   },
   created () {
     this.db = firebase.firestore()
-    console.log(this.Urls)
+    console.log(this.Urls.youtube.watch2)
   },
   methods: {
     // DBにデータを送信する

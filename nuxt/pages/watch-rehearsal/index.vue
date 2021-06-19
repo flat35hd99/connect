@@ -6,7 +6,7 @@
           <iframe
             width="560"
             height="315"
-            :src="Urls.youtube.watch2"
+            :src="Urls.youtube.rehearsal"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -47,8 +47,8 @@
         </p>
         <p>※定員が決まっておりますので、お間違いのないようよろしくお願いいたします。</p>
         <div class="d-flex justify-content-around text-center py-md-5 py-2">
-          <c-button class="reaction_button color_infred" :href="Urls.zoom.break1.booth1">ブース１に参加</c-button>
-          <c-button class="reaction_button color_infred" :href="Urls.zoom.break1.booth1">ブース２に参加</c-button>
+          <c-button class="reaction_button color_infred" :href="Urls.zoom.break1.booth1" target="_blank" rel="noopener">ブース１に参加</c-button>
+          <c-button class="reaction_button color_infred" :href="Urls.zoom.break1.booth2" target="_blank" rel="noopener">ブース２に参加</c-button>
         </div>
       </div>
       <div class="col-md-4">
@@ -73,8 +73,8 @@
         </p>
         <p>※定員が決まっておりますので、お間違いのないようよろしくお願いいたします。</p>
         <div class="d-flex justify-content-around text-center py-md-5 py-2">
-          <c-button class="reaction_button color_infblue" :href="Urls.zoom.break1.booth1">ブース１に参加</c-button>
-          <c-button class="reaction_button color_infblue" :href="Urls.zoom.break1.booth1">ブース２に参加</c-button>
+          <c-button class="reaction_button color_infblue" :href="Urls.zoom.break2.booth1" target="_blank" rel="noopener">ブース１に参加</c-button>
+          <c-button class="reaction_button color_infblue" :href="Urls.zoom.break2.booth2" target="_blank" rel="noopener">ブース２に参加</c-button>
         </div>
       </div>
     </div>
