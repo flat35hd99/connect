@@ -20,7 +20,7 @@
         </div>
         <div class="col-md-6 fluid_fullwidth text-center">
           <!--リハ中は直接視聴ページへ遷移-->
-          <c-button :isOpen="isOpen" href="/chooseSeat/" color_red>席を選ぶ</c-button>
+          <c-button :isOpen="isOpen" href="/chooseSeat/" color_red>着席する</c-button>
         </div>
       </div>
       <div class="row mb-5">
@@ -129,6 +129,23 @@
           </div>
         </div>
       </div>
+      <div class="row mb-5">
+        <div class="col-12">
+          <c-header-style-one>Break Information</c-header-style-one>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="img__wrapper">
+                <img src="break1.png" alt="">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="img__wrapper">
+                <img src="break2.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -155,7 +172,7 @@ export default {
         {
           name: '魚住晴香',
           title: '名古屋大学文学部４年',
-          theme: 'コンプレックスが教えてくれた、ありのまま自分らしく生きること',
+          theme: '「コンプレックスが教えてくれた、ありのまま自分らしく生きること」',
           desc: '名古屋大学４年。コロナ禍で肌荒れに悩み、その経験から持った違和感を、ありのままの状態でSNSで発信。現在は大学に通いながらモデレーターや司会業を務める他、キャリア・コンプレックスなどをテーマに発信を行う。',
           img: 'speaker/魚住さん写真.jpg',
           links: ['https://twitter.com/hrkzum?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor',
@@ -174,8 +191,8 @@ export default {
         {
           name: '菱谷和明',
           title: '株式会社NEXTRA CEO',
-          theme: '',
-          desc: '詳細：Coming Soon...',
+          theme: '「自分らしく働くことは涙が出るほど幸せだ」',
+          desc: 'キャリア選択における自己理解の必要性を感じ、キャリアコンサルタントとして一人でも多くの方が自分らしく働くことができる社会を目指し活動。短期集中型自己理解プログラムTHISISMEの企画兼講師。',
           img: 'speaker/菱谷さん写真.jpg',
           links: ['https://twitter.com/careerlabo_tim?s=20',
             'https://www.instagram.com/careerlabonagoya/?hl=ja']
@@ -183,16 +200,16 @@ export default {
         {
           name: '佐々木あみ',
           title: '名古屋大学法学部４年',
-          theme: '',
-          desc: '詳細：Coming Soon...',
+          theme: '「本当のワークライフバランスとは、生きたいように生きること」',
+          desc: '高校生の頃、ワークライフバランスを取れない社会に問題意識を抱く。トビタテ留学JAPAN11期生として北欧・スウェーデンに留学し、人々のリアルなワークライフバランスを学ぶため、３0人以上にインタビュー調査を行った。',
           img: 'speaker/佐々木さん写真.jpg',
           links: []
         },
         {
           name: '倉本美津留',
           title: '放送作家',
-          theme: '',
-          desc: '詳細：Coming Soon...',
+          theme: '「人生にポジティブな影響を与える気づきを得るための方法」',
+          desc: '「ダウンタウンDX」「M-1グランプリ」など、数々のテレビ番組手がける私が、笑いの視点を持って、日常の中に潜んでいる気づきの見つけ方を伝授します。',
           img: 'speaker/倉本さん写真.jpg',
           links: []
         }
