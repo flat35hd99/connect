@@ -102,8 +102,8 @@ export default {
     return {
       word: '全部',
       team: '全体',
-      toYes: '全部',
-      contentYes: '',
+      toManage: '全体',
+      contentManage: '',
       yesList: [],
       ManageList: []
     }
