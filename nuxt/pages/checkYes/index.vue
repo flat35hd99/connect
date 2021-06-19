@@ -33,9 +33,9 @@
           v-for="yes in yesList"
           :key='yes.time'>
             <div class="d-flex">
-              <p>{{yes.time}}:</p>
-              <p>{{yes.to}}:</p>
-              <p>{{yes.content}}</p>
+              <p class="mr-2">time:{{yes.time}}</p>
+              <p class="mr-3">to:{{yes.to}}</p>
+              <p class="mr-2">{{yes.content}}</p>
             </div>
           </div>
         </div>
@@ -54,7 +54,7 @@ export default {
   },
   data () {
     return {
-      word: '',
+      word: '全部',
       yesList: []
     }
   },
@@ -77,6 +77,7 @@ export default {
           docs.forEach((doc) => {
             const yes = doc.data()
             yes.id = doc.id // 一意のドキュメントIDをプロパティに追加（後のupdateやdeleteでドキュメントIDが必要なため）
+            yes.time = new Date(yes.time).toLocaleTimeString()
             this.yesList.push(yes)
           })
         })
@@ -86,6 +87,7 @@ export default {
           docs.forEach((doc) => {
             const yes = doc.data()
             yes.id = doc.id // 一意のドキュメントIDをプロパティに追加（後のupdateやdeleteでドキュメントIDが必要なため）
+            yes.time = new Date(yes.time).toLocaleTimeString()
             this.yesList.push(yes)
           })
         })
