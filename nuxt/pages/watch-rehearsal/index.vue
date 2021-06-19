@@ -111,7 +111,7 @@ export default {
       waitingLink: '/waiting/',
       chooseLink: '/chooseSeat/',
       watchLink: '/watch/',
-      toYes: '',
+      toYes: '運営',
       contentYes: '',
       yesList: []
     }
@@ -204,7 +204,6 @@ export default {
         // 保存に失敗した時
         console.error('Error adding document: ', error)
       })
-      this.toYes = ''
       this.contentYes = ''
     },
     getYes () {
