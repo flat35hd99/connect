@@ -30,7 +30,6 @@
           </select>
           <input class="reaction_yes" type="input" name="yes" v-model="contentYes" placeholder="その考えおもろ" />
           <button class="reaction_button color_infblue" v-on:click="submitYes()">あっ！！</button>
-          <button class="reaction_button color_infblue" v-on:click="getYes()">更新</button>
         </div>
         <p class="invisible thanks" id="thanks">Thank you!</p>
         <div class="timeline">
