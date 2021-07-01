@@ -31,6 +31,7 @@ export default {
 <style lang="scss" scoped>
   div{
     border-bottom: 1px solid #707070;
+    margin-bottom: 10px;
     &::before{
       display: inline-block;
       content: "";
