@@ -16,13 +16,29 @@
     </div>
     <div class="row mb-5">
       <div class="col-md-6">
-        <c-header-style-one>トークでの気づきを発信しましょう！</c-header-style-one>
-        <p>トーク視聴中の気づきを下のボタンから発信しましょう！</p>
-        <div class="text-center">
-          <form class="reaction_form" action="" method="post">
-            <input class="reaction_yes" type="text" name="yes" placeholder="その考えおもろ" />
-            <input class="reaction_button color_infblue" type="submit" value="あっ！！" />
-          </form>
+        <c-header-style-one>トークでの気づき・質問を発信しましょう！</c-header-style-one>
+        <p>トーク視聴中の気づき・質問を下のフォームから発信しましょう！トーク後の感想であなたの意見が採用されるかも？？</p>
+        <p>宛先（運営orスピーカーさん）と、内容を入力して送信をお願いします！</p>
+        <div class="text-center reaction_form">
+          <select name="example" class="reaction_yes" v-model="toYes">
+            <option value="運営">運営へ</option>
+            <option value="魚住さん">魚住さんへ</option>
+            <option value="石井さん">石井さんへ</option>
+            <option value="菱谷さん">菱谷さんへ</option>
+            <option value="佐々木さん">佐々木さんへ</option>
+            <option value="倉本さん">倉本さんへ</option>
+          </select>
+          <input class="reaction_yes" type="input" name="yes" v-model="contentYes" placeholder="その考えおもろ" />
+          <button class="reaction_button color_infblue" v-on:click="submitYes()">あっ！！</button>
+        </div>
+        <p class="invisible thanks" id="thanks">Thank you!</p>
+        <div class="timeline">
+          <div
+          class="tweet"
+          v-for="yes in yesList"
+          :key='yes'>
+            <p><span>{{yes.to}}:</span><span>{{yes.content}}</span></p>
+          </div>
         </div>
       </div>
       <div class="col-md-6">
@@ -94,7 +110,10 @@ export default {
     return {
       waitingLink: '/waiting/',
       chooseLink: '/chooseSeat/',
-      watchLink: '/watch/'
+      watchLink: '/watch/',
+      toYes: '運営',
+      contentYes: '',
+      yesList: []
     }
   },
   async asyncData ({ $axios }) {
@@ -106,7 +125,7 @@ export default {
   },
   created () {
     this.db = firebase.firestore()
-    console.log(this.Urls.youtube.watch2)
+    console.log(this.Urls)
   },
   methods: {
     // DBにデータを送信する
@@ -163,6 +182,40 @@ export default {
         // 保存に失敗した時
         console.error('Error adding document: ', error)
       })
+    },
+    submitYes () {
+      // 先程作った「sample」というコレクションを取得する
+      const collection = this.db.collection('yes')
+      const timeStamp = Math.round((new Date()).getTime())
+      // 「sample」というコレクションに対して {} で定義した情報を add する
+      collection.add({
+        to: this.toYes,
+        content: this.contentYes,
+        time: timeStamp
+      }).then(function (docRef) {
+        // 保存に成功した時
+        console.log('Document written with ID: ', docRef.id)
+        const thanks = document.getElementById('thanks')
+        thanks.classList.remove('invisible')
+        setTimeout(function () {
+          thanks.classList.add('invisible')
+        }, 4000)
+      }).catch(function (error) {
+        // 保存に失敗した時
+        console.error('Error adding document: ', error)
+      })
+      this.contentYes = ''
+    },
+    getYes () {
+      this.db.collection('yes').onSnapshot((docs) => {
+        this.yesList = [] // リアルタイム反映のため一度リセット
+        docs.forEach((doc) => {
+          const yes = doc.data()
+          yes.id = doc.id // 一意のドキュメントIDをプロパティに追加（後のupdateやdeleteでドキュメントIDが必要なため）
+          this.yesList.push(yes)
+        })
+      })
+      console.log(this.yesList)
     }
   }
 }
@@ -172,12 +225,23 @@ export default {
 
 .container-fluid {
 }
+.timeline{
+  width: 100%;
+  background-color: white;
+  .tweet{
+    border-bottom: 1px #303030 solid;
+    padding: 15px;
+    p{
+      color: black;
+      margin: 0;
+    }
+  }
+}
 .reaction_form{
   display: flex;
   justify-content: center;
   .reaction_yes{
     width: 100%;
-    margin-right: 10%;
   }
 }
 .reaction_button{
@@ -205,7 +269,9 @@ export default {
       }
     }
 }
-
+.thanks{
+  transition: visibility .5s ease;
+}
 .title {
   font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
