@@ -28,8 +28,8 @@
             <option value="佐々木さん">佐々木さんへ</option>
             <option value="倉本さん">倉本さんへ</option>
           </select>
-          <input class="reaction_yes" type="input" name="yes" v-model="contentYes" placeholder="その考えおもろ" />
-          <button class="reaction_button color_infblue" v-on:click="submitYes()">あっ！！</button>
+          <input class="reaction_yes" type="input" name="yes" v-model="contentYes" placeholder="〇〇という気づきが得られました。" />
+          <button class="reaction_button color_infblue" v-on:click="submitYes()">送信</button>
         </div>
         <p class="invisible thanks" id="thanks">Thank you!</p>
         <div class="timeline">
@@ -43,7 +43,8 @@
       </div>
       <div class="col-md-6">
         <div class="text-center">
-          <c-header-style-one>スピーカーさんに拍手を送ろう！</c-header-style-one>
+          <c-header-style-one>スピーカーさんにリアクションを送ろう！</c-header-style-one>
+          <p class="text-left">※youtubeLiveの仕様上遅延が3〜5秒遅延が発生します。そのためトーク中はオフにさせていただきます。</p>
           <div class="d-flex justify-content-around ">
             <button class="reaction_button color_infred" v-on:click="submitClap()">拍手</button>
             <button class="reaction_button color_infred" v-on:click="submitWhistle()">口笛</button>
