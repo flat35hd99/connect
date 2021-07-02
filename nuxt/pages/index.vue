@@ -20,7 +20,7 @@
         </div>
         <div class="col-md-6 fluid_fullwidth text-center">
           <!--リハ中は直接視聴ページへ遷移-->
-          <c-button :isOpen="isOpen" href="/chooseSeat/" color_red>着席する</c-button>
+          <c-button :isOpen="isOpen" href="/watch" color_red>着席する</c-button>
         </div>
       </div>
       <div class="row mb-5">
