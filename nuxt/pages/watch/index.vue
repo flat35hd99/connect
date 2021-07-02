@@ -45,10 +45,19 @@
         <div class="text-center">
           <c-header-style-one>スピーカーさんにリアクションを送ろう！</c-header-style-one>
           <p class="text-left">※youtubeLiveの仕様上遅延が3〜5秒遅延が発生します。そのためトーク中はオフにさせていただきます。</p>
-          <div class="d-flex justify-content-around ">
-            <button class="reaction_button color_infred" v-on:click="submitClap()">拍手</button>
-            <button class="reaction_button color_infred" v-on:click="submitWhistle()">口笛</button>
-            <button class="reaction_button color_infred" v-on:click="submitLaugh()">笑い声</button>
+          <div class="justify-content-around ">
+            <div>
+              <button class="reaction_button color_infred" v-on:click="submitClap()">👏</button>
+              <p>{{numbersOfClap}}</p>
+            </div>
+            <div>
+              <button class="reaction_button color_infred" v-on:click="submitWhistle()">口笛</button>
+              <p>{{numbersOfWhistle}}</p>
+            </div>
+            <div>
+              <button class="reaction_button color_infred" v-on:click="submitLaugh()">笑い声</button>
+              <p>{{numbersOfLaugh}}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -114,7 +123,10 @@ export default {
       watchLink: '/watch/',
       toYes: '運営',
       contentYes: '',
-      yesList: []
+      yesList: [],
+      numbersOfClap: 0,
+      numbersOfWhistle: 0,
+      numbersOfLaugh: 0
     }
   },
   async asyncData ({ $axios }) {
@@ -131,6 +143,7 @@ export default {
   methods: {
     // DBにデータを送信する
     submitClap () {
+      this.numbersOfClap += 1
       // 先程作った「sample」というコレクションを取得する
       const collection = this.db.collection('action')
       const timeStamp = Math.round((new Date()).getTime())
@@ -149,6 +162,7 @@ export default {
       })
     },
     submitWhistle () {
+      this.numbersOfWhistle += 1
       // 先程作った「sample」というコレクションを取得する
       const collection = this.db.collection('action')
       const timeStamp = Math.round((new Date()).getTime())
@@ -167,6 +181,7 @@ export default {
       })
     },
     submitLaugh () {
+      this.numbersOfLaugh += 1
       // 先程作った「sample」というコレクションを取得する
       const collection = this.db.collection('action')
       const timeStamp = Math.round((new Date()).getTime())
