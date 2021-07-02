@@ -95,8 +95,13 @@
         </div>
       </div>
     </div>
-    <div>
-      <a href="/#speaker-information">スピーカー情報はこちら</a>
+    <div class="row py-5">
+      <div class="col-lg-12">
+        <c-header-style-one color_infblue>Speaker Information</c-header-style-one>
+        <p>
+          <a href="/#speaker-information">スピーカー情報はこちら</a>
+        </p>
+      </div>
     </div>
   </div>
 </template>
