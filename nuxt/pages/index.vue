@@ -293,16 +293,10 @@ export default {
   background: linear-gradient(to right, $inf-orange, $inf-red, $inf-orange);
   background-size: 200% auto;
   transition: all 1s ease;
-  &:hover{
-    background-position: right center;
-  }
 }
 .bg_blue{
   background: linear-gradient(to right, $inf-light-blue, $inf-blue, $inf-light-blue);
   background-size: 200% auto;
   transition: all 1s ease;
-  &:hover{
-    background-position: right center;
-  }
 }
 </style>
