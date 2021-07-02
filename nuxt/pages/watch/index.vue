@@ -78,6 +78,9 @@
         </div>
       </div>
     </div>
+    <div>
+      <a href="/#speaker-information">スピーカー情報はこちら</a>
+    </div>
   </div>
 </template>
 

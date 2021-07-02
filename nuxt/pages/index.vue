@@ -98,7 +98,7 @@
       </div>
       <div class="row mb-5">
         <div class="col-12">
-          <c-header-style-one>Speaker Information</c-header-style-one>
+          <c-header-style-one id="speaker-information">Speaker Information</c-header-style-one>
           <div class="row">
             <div
               class="col-md-4 d-flex justify-content-center mb-4"
@@ -110,7 +110,7 @@
                 <div class="card-body">
                   <h5 class="card-title">{{speaker.name}}</h5>
                   <p class="card-text font-bold">{{speaker.title}}</p>
-                  <p class="card-text font-bold">トークテーマ<br>{{speaker.theme}}</p>
+                  <p class="card-text">トークテーマ<br><span style="text-decoration: underline; text-decoration-color: red; font-size: 20px;">{{speaker.theme}}</span></p>
                   <p class="card-text">{{speaker.desc}}</p>
                   <ul class="follow-me">
                     <li
